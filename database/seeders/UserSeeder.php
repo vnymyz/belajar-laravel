@@ -1,0 +1,28 @@
+<?php
+
+namespace Database\Seeders;
+
+use App\Models\User;
+use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+
+class UserSeeder extends Seeder
+{
+    /**
+     * Run the database seeds.
+     */
+    public function run(): void
+    {
+        // buat bikin user aku aja
+        User::factory()->create([
+            'name' => 'Vanya Mayazura',
+            'username' => 'vanyamayazura',
+            'email' => 'vanyamaya@gmail.com',
+            'password' => Hash::make('password123'),
+        ]);
+
+        // buatin 5 user random
+        User::factory(5)->create();
+    }
+}
