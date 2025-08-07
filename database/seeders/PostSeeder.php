@@ -17,7 +17,7 @@ class PostSeeder extends Seeder
     {
          Post::factory(30)->recycle([
             Category::all(), // menjalankan semua yang ada di category seeder
-            User::all()
+            User::all() // User seeder
         ])->create();
     }
 }
