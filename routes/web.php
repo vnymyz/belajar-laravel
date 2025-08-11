@@ -24,7 +24,11 @@ Route::get('/posts', function () {
     // $posts = Post::with(['author', 'category'])->latest()->get(); 
 
     // ini cara boros query
-    $posts =  Post::latest()->get();
+
+    $posts =  Post::latest()->filter(request(['search', 'category', 'author']))->paginate(5)->
+    withQueryString();
+
+    
     return view('posts', ['title' => 'Blog', 'posts' => $posts]);
 });
 
@@ -36,25 +40,7 @@ Route::get('/posts/{post:slug}', function(Post $post){
     return view('post', ['title' => 'Single Post', 'post' => $post]);
 });
 
-// rute untuk menampilkan si author nulis postingan apa aja
-Route::get('/authors/{user:username}', function (User $user) {
-    // membuat lazy eager loading
-    // $posts = $user->posts->load('category', 'author');
 
-    // ini cara boros query
-    return view('posts', ['title' => count($user->posts) . ' Article by ' .
-    $user->name, 'posts' => $user->posts]);
-});
-
-// bikin routing untuk get post by category
-Route::get('/categories/{category:slug}', function (Category $category) {
-    // membuat lazy eager loading untuk category
-    //  $posts = $category->posts->load('category', 'author');
-
-    // ini cara boros query
-    return view('posts', ['title' => 'Category in  ' .
-    $category->name, 'posts' => $category->posts]);
-});
 
 // route about
 Route::get('/about', function () {

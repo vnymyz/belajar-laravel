@@ -2060,3 +2060,19 @@ Aku hari ini belajar bagaimana mengelola query dengan baik agar tidak terjadi la
 saya mengubah lazy loading menjadi eager loading bertujuan untuk mengoptimalkan query.
 
 lanjutan materi Update UI FlowBite : https://learn.wpucourse.id/member/course/SkDQxGYr445D0DwVd1soz/3/14
+
+### Jum'at, 08 Agustus 2025 - Update UI Flowbite
+
+Install the Flowbite Typography plugin via NPM
+
+```bash
+npm i -D flowbite-typography
+```
+
+Install Flowbite as a dependency using NPM by running the following command:
+
+```bash
+npm install flowbite --save
+```
+
+### Minggu, 10 Agustus 2025 - Tambah fitur Search
