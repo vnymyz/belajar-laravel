@@ -1,12 +1,32 @@
 ## How to Run it ?
 
-1. Setup "composer install && npm install" in CMD or terminal
+1. Setup "composer install && npm install" in CMD or terminal :
+
+```bash
+composer install && npm install
+```
 
 2. connect to database "php artisan migrate" and "php artisan migrate --seed"
 
+```bash
+# Connect to database
+php artisan migrate
+
+# Insert seeder to database
+php artisan migrate --seed
+```
+
 3. and to refresh database "php artisan migrate:fresh --seed"
 
-4. When composer run dev or npm run dev
+```bash
+php artisan migrate:fresh --seed
+```
+
+4. When done try :
+
+```bash
+composer run dev or npm run dev
+```
 
 
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
